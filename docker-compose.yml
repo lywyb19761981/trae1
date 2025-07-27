@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_ENV=production
+      - SECRET_KEY=your-production-secret-key
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+
+  # 可选：添加数据库服务
+  # db:
+  #   image: postgres:13
+  #   environment:
+  #     POSTGRES_DB: todoapp
+  #     POSTGRES_USER: todouser
+  #     POSTGRES_PASSWORD: todopass
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+
+# volumes:
+#   postgres_data:

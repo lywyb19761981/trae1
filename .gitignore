@@ -168,3 +168,28 @@ Thumbs.db
 
 # Vercel
 .vercel/
+
+# 部署配置文件
+production.env
+*.env.local
+*.env.production
+
+# Docker
+.dockerignore
+
+# 日志文件
+logs/
+*.log
+
+# SSL证书
+*.crt
+*.key
+*.pem
+
+# 备份文件
+*.bak
+*.backup
+
+# 部署密钥
+secrets/
+keys/
