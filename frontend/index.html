@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户注册登录系统</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-container">
+            <!-- 登录表单 -->
+            <div id="login-form" class="form-container active">
+                <h2>用户登录</h2>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="loginUsername">用户名/邮箱</label>
+                        <input type="text" id="loginUsername" name="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="loginPassword">密码</label>
+                        <input type="password" id="loginPassword" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">登录</button>
+                </form>
+                <p class="switch-form">
+                    还没有账户？ <a href="#" onclick="switchToRegister()">立即注册</a>
+                </p>
+            </div>
+
+            <!-- 注册表单 -->
+            <div id="register-form" class="form-container">
+                <h2>用户注册</h2>
+                <form id="registerForm">
+                    <div class="input-group">
+                        <label for="registerUsername">用户名</label>
+                        <input type="text" id="registerUsername" name="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="registerEmail">邮箱</label>
+                        <input type="email" id="registerEmail" name="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="registerPassword">密码</label>
+                        <input type="password" id="registerPassword" name="password" required minlength="6">
+                    </div>
+                    <div class="input-group">
+                        <label for="confirmPassword">确认密码</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">注册</button>
+                </form>
+                <p class="switch-form">
+                    已有账户？ <a href="#" onclick="switchToLogin()">立即登录</a>
+                </p>
+            </div>
+
+            <!-- 用户信息页面 -->
+            <div id="user-profile" class="form-container">
+                <h2>用户信息</h2>
+                <div id="profileInfo">
+                    <!-- 用户信息将通过JavaScript动态加载 -->
+                </div>
+                <button onclick="logout()" class="btn btn-secondary">退出登录</button>
+            </div>
+        </div>
+
+        <!-- 消息提示 -->
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
